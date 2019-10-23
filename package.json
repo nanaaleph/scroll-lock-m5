@@ -1,5 +1,5 @@
 {
-    "name": "scroll-lock",
+    "name": "scroll-lock-m5",
     "version": "2.1.2",
     "description": "Cross-browser JavaScript library to disable scrolling page.",
     "main": "dist/scroll-lock.js",

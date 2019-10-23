@@ -1,5 +1,5 @@
 <h1 align="center">
-  scroll-lock
+  scroll-lock-m5
 </h1>
 <p align="center">
   <img src="https://travis-ci.org/FL3NKEY/scroll-lock.svg?branch=master">
@@ -25,15 +25,15 @@ yarn add scroll-lock
 ```
 ```js
 //es6 import
-import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import { disablePageScroll, enablePageScroll } from 'scroll-lock-m5';
 
 //or
-import scrollLock from 'scroll-lock';
+import scrollLock from 'scroll-lock-m5';
 scrollLock.disablePageScroll();
 //...
 
 //require
-const scrollLock = require('scroll-lock');
+const scrollLock = require('scroll-lock-m5');
 scrollLock.disablePageScroll();
 //...
 ```
@@ -52,7 +52,7 @@ The **es6 import** will be used further in the examples, but these methods will 
 ## Disable page scrolling
 When you call the ```disablePageScroll``` method, scrolling is also disabled in iOS and other touch devices ([essence of the problem](https://stackoverflow.com/questions/28790889/css-how-to-prevent-scrolling-on-ios-safari)). But scrolling on touch devices will be disabled on all elements. To do this, you must explicitly specify which element will scroll on the page.
 ```javascript
-import { disablePageScroll, enablePageScroll } from 'scroll-lock';
+import { disablePageScroll, enablePageScroll } from 'scroll-lock-m5';
 
 //Get the element that should scroll when page scrolling is disabled
 const $scrollableElement = document.querySelector('.my-scrollable-element');
@@ -90,7 +90,7 @@ To prevent this, scroll-lock calculates the scroll bar width when calling the ``
 <br>
 But this does not work for elements with ```fixed``` positioning. To do this, you must explicitly indicate which element needs to fill in the space.
 ```javascript
-import { addFillGapTarget, addFillGapSelector } from 'scroll-lock';
+import { addFillGapTarget, addFillGapSelector } from 'scroll-lock-m5';
 
 //selector
 addFillGapSelector('.my-fill-gap-selector');
@@ -111,7 +111,7 @@ A call to the ```disablePageScroll``` method creates a queue of calls. If you ca
 <br>
 If for some reason you need to activate scrolling the page out of turn, use the ```clearQueueScrollLocks``` method:
 ```javascript
-import { disablePageScroll, clearQueueScrollLocks } from 'scroll-lock';
+import { disablePageScroll, clearQueueScrollLocks } from 'scroll-lock-m5';
 
 disablePageScroll();
 disablePageScroll();
@@ -132,7 +132,7 @@ console.log(getScrollState()); //true
 Hides the scroll bar and disables page scrolling.
 * ```scrollableTarget``` - (```HTMLElement | NodeList | HTMLElement array```) scrollable element
 ```javascript
-import { disablePageScroll } from 'scroll-lock';
+import { disablePageScroll } from 'scroll-lock-m5';
 
 const $scrollableElement = document.querySelector('.my-scrollable-element');
 disablePageScroll($scrollableElement);
@@ -142,7 +142,7 @@ disablePageScroll($scrollableElement);
 Shows the scroll bar and enables page scrolling.
 * ```scrollableTarget``` - (```HTMLElement | NodeList | HTMLElement array```) scrollable element
 ```javascript
-import { enablePageScroll } from 'scroll-lock';
+import { enablePageScroll } from 'scroll-lock-m5';
 
 const $scrollableElement = document.querySelector('.my-scrollable-element');
 enablePageScroll($scrollableElement);
@@ -151,7 +151,7 @@ enablePageScroll($scrollableElement);
 #### ```getScrollState()```
 Returns the state of the page scroll bar.
 ```javascript
-import { disablePageScroll, getScrollState } from 'scroll-lock';
+import { disablePageScroll, getScrollState } from 'scroll-lock-m5';
 
 console.log(getScrollState()); //true
 disablePageScroll();
@@ -161,7 +161,7 @@ console.log(getScrollState()); //false
 #### ```clearQueueScrollLocks()```
 Clears the queue value.
 ```javascript
-import { disablePageScroll, enablePageScroll, clearQueueScrollLocks, getScrollState } from 'scroll-lock';
+import { disablePageScroll, enablePageScroll, clearQueueScrollLocks, getScrollState } from 'scroll-lock-m5';
 
 disablePageScroll();
 disablePageScroll();
@@ -181,7 +181,7 @@ Returns the width of the scroll bar.
 * ```onlyExists``` - (```Boolean```) only if scroll bar is exists
 <br> **Default value:** ```false```
 ```javascript
-import { getPageScrollBarWidth } from 'scroll-lock';
+import { getPageScrollBarWidth } from 'scroll-lock-m5';
 
 document.body.style.overflow = 'scroll';
 console.log(getPageScrollBarWidth()); //Number
@@ -196,7 +196,7 @@ console.log(getPageScrollBarWidth(true)); //0
 #### ```getCurrentPageScrollBarWidth()```
 Returns the width of the scroll bar to specific moment.
 ```javascript
-import { disablePageScroll, getCurrentPageScrollBarWidth } from 'scroll-lock';
+import { disablePageScroll, getCurrentPageScrollBarWidth } from 'scroll-lock-m5';
 
 console.log(getCurrentPageScrollBarWidth()); //Number
 disablePageScroll();
@@ -209,7 +209,7 @@ Makes elements with this selector scrollable.
 * ```scrollableSelector``` - (```String | String array```) scrollable selector
 <br> **Initial value:** ```['[data-scroll-lock-scrollable]']```
 ```javascript
-import { disablePageScroll, addScrollableSelector } from 'scroll-lock';
+import { disablePageScroll, addScrollableSelector } from 'scroll-lock-m5';
 
 addScrollableSelector('.my-scrollable-selector');
 disablePageScroll();
@@ -219,7 +219,7 @@ disablePageScroll();
 Makes elements with this selector not scrollable.
 * ```scrollableSelector``` - (```String | String array```) scrollable selector
 ```javascript
-import { removeScrollableSelector } from 'scroll-lock';
+import { removeScrollableSelector } from 'scroll-lock-m5';
 
 removeScrollableSelector('.my-scrollable-selector');
 ```
@@ -228,7 +228,7 @@ removeScrollableSelector('.my-scrollable-selector');
 Makes the element scrollable.
 * ```scrollableSelector``` - (```HTMLElement | NodeList | HTMLElement array```) scrollable element
 ```javascript
-import { disablePageScroll, addScrollableTarget } from 'scroll-lock';
+import { disablePageScroll, addScrollableTarget } from 'scroll-lock-m5';
 
 const $scrollableElement = document.querySelector('.my-scrollable-element');
 addScrollableTarget($scrollableElement);
@@ -239,7 +239,7 @@ disablePageScroll();
 Makes the element not scrollable.
 * ```scrollableSelector``` - (```HTMLElement | NodeList | HTMLElement array```) scrollable element
 ```javascript
-import { removeScrollableTarget } from 'scroll-lock';
+import { removeScrollableTarget } from 'scroll-lock-m5';
 
 const $scrollableElement = document.querySelector('.my-scrollable-element');
 removeScrollableTarget($scrollableElement);
@@ -252,7 +252,7 @@ Makes elements with this selector lockable.
 * ```lockableSelector``` - (```String | String array```) lockable selector
 <br> **Initial value:** ```['[data-scroll-lock-lockable]']```
 ```javascript
-import { disablePageScroll, addLockableSelector } from 'scroll-lock';
+import { disablePageScroll, addLockableSelector } from 'scroll-lock-m5';
 
 addLockableSelector('.my-lockable-selector');
 disablePageScroll();
@@ -262,7 +262,7 @@ disablePageScroll();
 Makes the element lockable.
 * ```lockableTarget``` - (```HTMLElement | NodeList | HTMLElement array```) lockable element
 ```javascript
-import { disablePageScroll, addLockableTarget } from 'scroll-lock';
+import { disablePageScroll, addLockableTarget } from 'scroll-lock-m5';
 
 const $lockableElement = document.querySelector('.my-lockable-element');
 addLockableTarget($lockableElement);
@@ -276,7 +276,7 @@ Fills the gap with elements with this selector.
 * ```fillGapSelector``` - (```String | String array```) a fill gap selector
 <br> **Initial value:** ```['body', '[data-scroll-lock-fill-gap]']```
 ```javascript
-import { addFillGapSelector } from 'scroll-lock';
+import { addFillGapSelector } from 'scroll-lock-m5';
 
 addFillGapSelector('.my-fill-gap-selector');
 ```
@@ -285,7 +285,7 @@ addFillGapSelector('.my-fill-gap-selector');
 Returns the gap for elements with this selector.
 * ```fillGapSelector``` - (```String | String array```) a fill gap selector
 ```javascript
-import { removeFillGapSelector } from 'scroll-lock';
+import { removeFillGapSelector } from 'scroll-lock-m5';
 
 removeFillGapSelector('.my-fill-gap-selector');
 ```
@@ -294,7 +294,7 @@ removeFillGapSelector('.my-fill-gap-selector');
 Fills the gap at the element.
 * ```fillGapTarget``` - (```HTMLElement | NodeList | HTMLElement array```) a fill gap element
 ```javascript
-import { addFillGapTarget } from 'scroll-lock';
+import { addFillGapTarget } from 'scroll-lock-m5';
 
 const $fillGapElement = document.querySelector('.my-fill-gap-element');
 addScrollableTarget($fillGapElement);
@@ -304,7 +304,7 @@ addScrollableTarget($fillGapElement);
 Returns the gap at the element.
 * ```fillGapTarget``` - (```HTMLElement | NodeList | HTMLElement array```) a fill gap element
 ```javascript
-import { removeFillGapTarget } from 'scroll-lock';
+import { removeFillGapTarget } from 'scroll-lock-m5';
 
 const $fillGapElement = document.querySelector('.my-fill-gap-element');
 removeFillGapTarget($fillGapElement);
@@ -316,7 +316,7 @@ Changes the method of filling the gap.
 * ```fillGapMethod``` - (```String: 'padding', 'margin', 'width', 'max-width', 'none'```) gap-filling method
 <br> **Default value:** ```padding```
 ```javascript
-import { setFillGapMethod } from 'scroll-lock';
+import { setFillGapMethod } from 'scroll-lock-m5';
 
 setFillGapMethod('margin');
 ```
@@ -324,7 +324,7 @@ setFillGapMethod('margin');
 #### ```refillGaps()```
 Recalculates filled gaps.
 ```javascript
-import { refillGaps } from 'scroll-lock';
+import { refillGaps } from 'scroll-lock-m5';
 
 refillGaps();
 ```

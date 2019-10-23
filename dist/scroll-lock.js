@@ -710,7 +710,7 @@ if (typeof window !== 'undefined') {
 if (typeof document !== 'undefined') {
   document.addEventListener('touchstart', onTouchStart);
   document.addEventListener('touchmove', scroll_lock_onTouchMove, {
-    passive: false
+    passive: true
   });
   document.addEventListener('touchend', onTouchEnd);
 }
